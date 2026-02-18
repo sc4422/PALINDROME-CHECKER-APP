@@ -2,26 +2,21 @@ import java.util.Scanner;
 
 public class Palindromecheckerapp {
     public static void main (String[] args){
-                Scanner sc = new Scanner(System.in);
-                System.out.print("Enter string: ");
-                String s = sc.next();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
 
-                int n = s.length();
-                boolean isPalindrome = true;
+        String rev = "";
 
-                for (int i = 0; i < n/2; i++) {
-                    if (s.charAt(i) != s.charAt(n - 1 - i)) {
-                        isPalindrome = false;
-                        break;
-                    }
-                }
+        // iterate from last character
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev = rev + str.charAt(i);
+        }
 
-                if (isPalindrome)
-                    System.out.println("Palindrome");
-                else
-                    System.out.println("Not Palindrome");
-
-                sc.close();
+        if (str.equalsIgnoreCase(rev))
+            System.out.println("Palindrome string");
+        else
+            System.out.println("Not a palindrome string");
             }
         }
 
