@@ -6,17 +6,25 @@ public class Palindromecheckerapp {
         System.out.print("Enter a string: ");
         String str = sc.nextLine();
 
-        String rev = "";
+        char[] arr = str.toCharArray();
+        boolean isPalindrome = true;
 
-        // iterate from last character
-        for (int i = str.length() - 1; i >= 0; i--) {
-            rev = rev + str.charAt(i);
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            if (arr[start] != arr[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
 
-        if (str.equalsIgnoreCase(rev))
-            System.out.println("Palindrome string");
+        if (isPalindrome)
+            System.out.println("Palindrome");
         else
-            System.out.println("Not a palindrome string");
+            System.out.println("Not Palindrome");
             }
         }
 
